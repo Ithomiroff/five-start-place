@@ -1,12 +1,16 @@
+import { Sidebar } from './Sidebar/Sidebar';
+import { Content } from './Content/Content';
 import { Outlet } from 'react-router-dom';
+
+import styles from './Root.module.scss';
 
 export const RootPage = () => {
   return (
-    <div>
-      <div>Root</div>
-      <div>
+    <section className={styles.layout}>
+      <Sidebar />
+      <Content>
         <Outlet />
-      </div>
-    </div>
+      </Content>
+    </section>
   );
 };
