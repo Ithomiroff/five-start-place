@@ -7,6 +7,7 @@ module.exports = function override(config, env) {
     ['@icons']: path.resolve(__dirname, 'src', 'assets', 'icons'),
     ['@config']: path.resolve(__dirname, 'src', 'config'),
     ['@shared']: path.resolve(__dirname, 'src', 'shared'),
+    ['@features']: path.resolve(__dirname, 'src', 'features'),
   })(config);
 
   return config;

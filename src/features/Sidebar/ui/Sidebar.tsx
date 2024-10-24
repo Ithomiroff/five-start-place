@@ -3,32 +3,32 @@ import styles from './Sidebar.module.scss';
 import { cn } from '@utils/cn-bind';
 import { ReactComponent as Logo } from '@icons/logo.svg';
 import { ReactComponent as LogoFull } from '@icons/logo-full.svg';
-import { MENU_ITEMS } from '../../../../config/navigation/list';
-import { MenuItem } from '../../../../config/navigation/types';
 import { ReactComponent as Notifications } from '@icons/notifications.svg';
 import { ReactComponent as Settings } from '@icons/settings.svg';
 import { ReactComponent as HideSidebar } from '@icons/hide-sidebar.svg';
 import { ReactComponent as User } from '@icons/user.svg';
 import { ReactComponent as Logout } from '@icons/logout.svg';
 import { ReactComponent as Settings1 } from '@icons/settings-01.svg';
-import { SubNavigation } from '../Subnavigation/Subnavigation';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from 'flowbite-react';
+import { MenuItem } from '@config/navigation/types';
+import { MENU_ITEMS } from '@config/navigation/list';
+import { SubNavigation } from '@features/Sidebar/ui/Subnavigation/Subnavigation';
+import { observer } from 'mobx-react';
+import SidebarStore from '@features/Sidebar/store/sidebar.store';
 
 const cx = cn(styles);
 
-export const Sidebar: FC = () => {
+export const Sidebar: FC = observer(() => {
   const [expanded, setExpanded] = useState<boolean>(false);
-
-  const [subMenu, setSubMenu] = useState<MenuItem[] | null>(null);
 
   const navigate = useNavigate();
 
   const handleSelect = (item: MenuItem) => () => {
-    setSubMenu(null);
+    SidebarStore.dropSubMenu();
 
     if (item.submenu) {
-      setSubMenu(item.submenu);
+      SidebarStore.selectSubMenu(item.submenu);
     } else {
       if (item.path) {
         navigate(item.path);
@@ -52,11 +52,12 @@ export const Sidebar: FC = () => {
               arrow={false}
             >
               <li
-                className={cx('navItem')}
+                className={cx('navItem', { navItemEvents: Boolean(item.badge) && !expanded })}
                 onClick={handleSelect(item)}
               >
                 <span className={cx('navItemIcon')}>{item.icon}</span>
                 {expanded && <span className={cx('navItemText')}>{item.name}</span>}
+                {Boolean(item.badge) && expanded && <span className={styles.badgeEvents}>{item.badge}</span>}
               </li>
             </Tooltip>
           ))}
@@ -97,7 +98,7 @@ export const Sidebar: FC = () => {
             className={cx('navItem', 'navItemBordered')}
             onClick={togglePanel}
           >
-            <span className={cx('navItemIcon')}>
+            <span className={cx('navItemIcon', { reverseIcon: !expanded })}>
               <HideSidebar />
             </span>
             {expanded && <span className={cx('navItemText')}>Свернуть панель</span>}
@@ -121,13 +122,10 @@ export const Sidebar: FC = () => {
         </ul>
       </aside>
 
-      {subMenu && (
-        <SubNavigation
-          expanded={expanded}
-          items={subMenu}
-        >
+      {SidebarStore.subPanelExpanded && (
+        <SubNavigation expanded={expanded}>
           <ul className={styles.nav}>
-            {subMenu.map((item) => (
+            {SidebarStore.subPanelItems.map((item) => (
               <li
                 key={item.key}
                 className={cx('navItem')}
@@ -135,6 +133,7 @@ export const Sidebar: FC = () => {
               >
                 {item.icon && <span className={cx('navItemIcon')}>{item.icon}</span>}
                 <span className={cx('navItemText')}>{item.name}</span>
+                <span className={styles.badgeEvents}>{item.badge}</span>
               </li>
             ))}
 
@@ -149,4 +148,4 @@ export const Sidebar: FC = () => {
       )}
     </section>
   );
-};
+});

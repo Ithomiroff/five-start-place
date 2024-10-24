@@ -1,0 +1,32 @@
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100%;
+  width: 16.5rem;
+  transform: translateX(5rem);
+  transition: transform 300ms ease-out;
+}
+
+.expanded {
+  transform: translateX(17.5rem);
+}
+
+.inner {
+  animation: appear 150ms forwards;
+  border-right: 1px solid #eaecf0;
+  background-color: #ffffff;
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+
+@keyframes appear {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

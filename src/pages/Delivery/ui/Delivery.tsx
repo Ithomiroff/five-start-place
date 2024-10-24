@@ -1,5 +1,5 @@
 import { FiltersBadges, PageContent } from '@shared/ui';
-import { DELIVERY_FILTERS } from './meta/consts';
+import { DELIVERY_FILTERS } from '../meta/consts';
 import { useState } from 'react';
 import { FilterBadge } from '@shared/meta/types';
 

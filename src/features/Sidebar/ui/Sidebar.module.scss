@@ -2,12 +2,16 @@
   width: 5rem;
   background-color: #ffffff;
   border-right: 1px solid #eaecf0;
+  transition: width 300ms ease-out;
   &.expanded {
     width: 17.5rem;
   }
 }
 
 .sidebar {
+  position: relative;
+  z-index: 6;
+  background-color: #ffffff;
   padding: 2rem 1rem;
   height: 100%;
   display: flex;
@@ -54,6 +58,18 @@
     min-height: 1.5rem;
     min-width: 1.5rem;
   }
+  &Events {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0.375rem;
+      right: 0.375rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: #F04438;
+    }
+  }
 
   &Bordered {
     border-top: 1px solid #eaecf0;
@@ -85,4 +101,25 @@
 
 .space {
   flex-grow: 2;
+}
+
+.reverseIcon {
+  transform: rotate(180deg);
+}
+
+.badgeEvents {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #E9EFFE;
+  color: #183993;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,4 +1,4 @@
-import { type ComponentProps, type FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export type MenuItem = {
   key: string;
@@ -6,4 +6,5 @@ export type MenuItem = {
   path?: string;
   icon?: ReactNode;
   submenu?: MenuItem[];
+  badge?: number;
 };

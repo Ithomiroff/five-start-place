@@ -15,16 +15,19 @@ const MENU_ITEMS: MenuItem[] = [
     key: 'meal',
     name: 'Еда',
     icon: <Meal />,
+    badge: 6,
     submenu: [
       {
         key: 'delivery',
         path: '/delivery',
         name: 'Доставка',
+        badge: 2,
       },
       {
         key: 'restaurant',
         path: '/restaurant',
         name: 'Ресторан',
+        badge: 4,
       },
     ],
   },
