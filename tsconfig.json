@@ -27,7 +27,10 @@
         "./src/assets/icons/*"
       ],
       "@config/*": [
-        "./src/config/**/*"
+        "./src/config/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
       ]
     }
   },

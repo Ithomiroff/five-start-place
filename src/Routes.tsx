@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
 import { RootPage } from './pages/Root';
-import { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 
 const Delivery = lazy(() => import('./pages/Delivery'));
 
@@ -11,7 +11,11 @@ const ROUTES: RouteObject[] = [
     children: [
       {
         path: 'delivery',
-        element: <Delivery />,
+        element: (
+          <Suspense>
+            <Delivery />
+          </Suspense>
+        ),
       },
     ],
   },
