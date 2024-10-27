@@ -45,52 +45,34 @@ export const Sidebar: FC = observer(() => {
 
         <ul className={cx('nav')}>
           {MENU_ITEMS.map((item) => (
-            <Tooltip
+            <li
               key={item.key}
-              placement="bottom"
-              content={item.name}
-              arrow={false}
+              className={cx('navItem', { navItemEvents: Boolean(item.badge) && !expanded })}
+              onClick={handleSelect(item)}
             >
-              <li
-                className={cx('navItem', { navItemEvents: Boolean(item.badge) && !expanded })}
-                onClick={handleSelect(item)}
-              >
-                <span className={cx('navItemIcon')}>{item.icon}</span>
-                {expanded && <span className={cx('navItemText')}>{item.name}</span>}
-                {Boolean(item.badge) && expanded && <span className={styles.badgeEvents}>{item.badge}</span>}
-              </li>
-            </Tooltip>
+              <span className={cx('navItemIcon')}>{item.icon}</span>
+              {expanded && <span className={cx('navItemText')}>{item.name}</span>}
+              {Boolean(item.badge) && expanded && <span className={styles.badgeEvents}>{item.badge}</span>}
+            </li>
           ))}
         </ul>
 
         <div className={styles.space}></div>
 
         <ul className={cx('nav')}>
-          <Tooltip
-            placement="bottom"
-            content="Уведомления"
-            arrow={false}
-          >
-            <li className={cx('navItem')}>
-              <span className={cx('navItemIcon')}>
-                <Notifications />
-              </span>
-              {expanded && <span className={cx('navItemText')}>Уведомления</span>}
-            </li>
-          </Tooltip>
+          <li className={cx('navItem')}>
+            <span className={cx('navItemIcon')}>
+              <Notifications />
+            </span>
+            {expanded && <span className={cx('navItemText')}>Уведомления</span>}
+          </li>
 
-          <Tooltip
-            placement="bottom"
-            content="Настройки"
-            arrow={false}
-          >
-            <li className={cx('navItem')}>
-              <span className={cx('navItemIcon')}>
-                <Settings />
-              </span>
-              {expanded && <span className={cx('navItemText')}>Настройки</span>}
-            </li>
-          </Tooltip>
+          <li className={cx('navItem')}>
+            <span className={cx('navItemIcon')}>
+              <Settings />
+            </span>
+            {expanded && <span className={cx('navItemText')}>Настройки</span>}
+          </li>
         </ul>
 
         <ul className={cx('nav')}>
