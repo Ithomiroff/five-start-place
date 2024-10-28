@@ -31,6 +31,9 @@
     &:last-child {
       border-bottom: none;
     }
+    &:hover {
+      background-color: #F9FAFB;
+    }
   }
   .cell {
     font-size: 0.875rem;
