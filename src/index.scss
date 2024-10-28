@@ -13,3 +13,31 @@ body {
   outline: none!important;
   box-shadow: none!important;
 }
+
+
+@layer base {
+  :root {
+    --white: #FFFFFF;
+    --black: #FFFFFF;
+
+    --blue-1: rgb(16, 24, 40);
+    --blue-2: rgb(24, 57, 147);
+    --blue-3: rgb(233, 239, 254);
+    --blue-4: rgb(74, 123, 255);
+
+    --gray-1: rgb(234, 236, 240);
+    --gray-2: rgb(102, 112, 133);
+    --gray-3: rgb(52, 64, 84);
+    --gray-4: rgb(71, 84, 103);
+    --gray-5: rgb(242, 244, 247);
+    --gray-6: rgb(249, 250, 251);
+
+    --red-1: rgb(240, 68, 56);
+    --red-2: rgb(180, 35, 24);
+    --red-3: rgb(254, 243, 242);
+
+    --green-1: rgb(18, 183, 106);
+    --green-2: rgb(2, 122, 72);
+    --green-3: rgb(236, 253, 243);
+  }
+}

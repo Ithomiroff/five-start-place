@@ -1,7 +1,7 @@
 .wrapper {
   width: 5rem;
-  background-color: #ffffff;
-  border-right: 1px solid #eaecf0;
+  background-color: var(--white);
+  border-right: 1px solid var(--gray-6);
   transition: width 300ms ease-out;
   &.expanded {
     width: 17.5rem;
@@ -11,7 +11,7 @@
 .sidebar {
   position: relative;
   z-index: 6;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 2rem 1rem;
   height: 100%;
   display: flex;
@@ -46,12 +46,12 @@
   cursor: pointer;
   user-select: none;
   &:hover {
-    background-color: #f9fafb;
+    background-color: var(--gray-6);
   }
 
   &Text {
     font-weight: 500;
-    color: #344054;
+    color: var(--gray-3);
     white-space: nowrap;
   }
   &Icon {
@@ -67,12 +67,12 @@
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: #F04438;
+      background-color: var(--red-1);
     }
   }
 
   &Bordered {
-    border-top: 1px solid #eaecf0;
+    border-top: 1px solid var(--gray-6);
     height: 4.5rem;
     border-radius: 0;
   }
@@ -81,11 +81,11 @@
 .avatar {
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #f2f4f7;
+  background-color: var(--gray-5);
 }
 
 .user {
-  color: #344054;
+  color: var(--gray-3);
 }
 
 .userName {
@@ -115,8 +115,8 @@
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background-color: #E9EFFE;
-  color: #183993;
+  background-color: var(--blue-3);
+  color: var(--blue-2);
   font-size: 0.75rem;
   font-weight: 500;
   display: flex;

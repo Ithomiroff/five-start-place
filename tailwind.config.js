@@ -4,24 +4,25 @@ const flowbite = require('flowbite-react/tailwind');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', flowbite.content()],
   theme: {
-    extend: {
-      colors: {
-        blue: {
-          1: '#183993',
-          2: '#E9EFFE',
-          3: '#101828',
-        },
-        gray: {
-          1: '#667085',
-          2: '#344054',
-          3: '#475467',
-          4: '#EAECF0',
-          5: '#F9FAFB',
-        },
-        red: {
-          1: '#F04438',
-        },
-      },
+    colors: {
+      white: 'var(--white)',
+      black: 'var(--black)',
+      'blue-1': 'var(--blue-1)',
+      'blue-2': 'var(--blue-2)',
+      'blue-3': 'var(--blue-3)',
+      'blue-4': 'var(--blue-4)',
+      'gray-1': 'var(--gray-1)',
+      'gray-2': 'var(--gray-2)',
+      'gray-3': 'var(--gray-3)',
+      'gray-4': 'var(--gray-4)',
+      'gray-5': 'var(--gray-5)',
+      'gray-6': 'var(--gray-6)',
+      'red-1': 'var(--red-1)',
+      'red-2': 'var(--red-2)',
+      'red-3': 'var(--red-3)',
+      'green-1': 'var(--green-1)',
+      'green-2': 'var(--green-2)',
+      'green-3': 'var(--green-3)',
     },
   },
   plugins: [flowbite.plugin()],

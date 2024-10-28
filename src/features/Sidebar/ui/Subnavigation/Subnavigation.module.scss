@@ -15,8 +15,8 @@
 
 .inner {
   animation: appear 150ms forwards;
-  border-right: 1px solid #eaecf0;
-  background-color: #ffffff;
+  border-right: 1px solid var(--gray-1);
+  background-color: var(--white);
   height: 100%;
   padding: 2rem 1rem;
 }

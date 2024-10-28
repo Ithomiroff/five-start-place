@@ -1,17 +1,17 @@
 
 .root {
-  border: 1px solid #EAECF0;
+  border: 1px solid var(--gray-1);
   border-radius: 0.75rem;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--white);
   min-width: 80rem;
 }
 
 .head {
-  background-color: #F9FAFB;
+  background-color: var(--gray-6);
   font-size: 0.75rem;
   font-weight: 500;
-  color: #475467;
+  color: var(--gray-4);
 }
 
 .row {
@@ -27,16 +27,16 @@
 
 .body {
   .row {
-    border-bottom: 1px solid #EAECF0;
+    border-bottom: 1px solid var(--gray-1);
     &:last-child {
       border-bottom: none;
     }
     &:hover {
-      background-color: #F9FAFB;
+      background-color: var(--gray-6);
     }
   }
   .cell {
     font-size: 0.875rem;
-    color: #101828;
+    color: var(--blue-1);
   }
 }

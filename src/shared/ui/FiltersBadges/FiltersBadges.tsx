@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC } from 'react';
 import { CustomFlowbiteTheme, Tabs } from 'flowbite-react';
 import { FilterBadge } from '@shared/meta/types';
 
@@ -9,8 +9,8 @@ const theme: CustomFlowbiteTheme['tabs'] = {
         pills: {
           base: 'py-2 px-3 no-outline',
           active: {
-            on: 'rounded-lg bg-blue-2 text-blue-1',
-            off: 'rounded-lg text-gray-1',
+            on: 'rounded-lg bg-blue-3 text-blue-2',
+            off: 'rounded-lg text-gray-2',
           },
         },
       },
