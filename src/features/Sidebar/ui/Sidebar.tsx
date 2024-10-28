@@ -16,6 +16,7 @@ import { MENU_ITEMS } from '@config/navigation/list';
 import { SubNavigation } from '@features/Sidebar/ui/Subnavigation/Subnavigation';
 import { observer } from 'mobx-react';
 import SidebarStore from '@features/Sidebar/store/sidebar.store';
+import { AppTooltip } from '@shared/ui/AppTooltip/AppTooltip';
 
 const cx = cn(styles);
 
@@ -45,15 +46,19 @@ export const Sidebar: FC = observer(() => {
 
         <ul className={cx('nav')}>
           {MENU_ITEMS.map((item) => (
-            <li
+            <AppTooltip
               key={item.key}
-              className={cx('navItem', { navItemEvents: Boolean(item.badge) && !expanded })}
-              onClick={handleSelect(item)}
+              content={item.name}
             >
-              <span className={cx('navItemIcon')}>{item.icon}</span>
-              {expanded && <span className={cx('navItemText')}>{item.name}</span>}
-              {Boolean(item.badge) && expanded && <span className={styles.badgeEvents}>{item.badge}</span>}
-            </li>
+              <li
+                className={cx('navItem', { navItemEvents: Boolean(item.badge) && !expanded })}
+                onClick={handleSelect(item)}
+              >
+                <span className={cx('navItemIcon')}>{item.icon}</span>
+                {expanded && <span className={cx('navItemText')}>{item.name}</span>}
+                {Boolean(item.badge) && expanded && <span className={styles.badgeEvents}>{item.badge}</span>}
+              </li>
+            </AppTooltip>
           ))}
         </ul>
 
