@@ -12,9 +12,9 @@ const DeliveryPage = () => {
       <FiltersBadges
         activeKey={filter}
         items={DELIVERY_FILTERS}
-        onChange={setFilter}
+        onChange={(key) => setFilter(key)}
       />
-      <DeliveryTable />
+      <DeliveryTable filter={filter} />
     </PageContent>
   );
 };

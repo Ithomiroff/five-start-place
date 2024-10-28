@@ -1,5 +1,7 @@
+import { OrderStatus } from '../../pages/Delivery/ui/Table/meta/types';
+
 type FilterBadge = {
-  key: string;
+  key: OrderStatus | 'all';
   name: string;
 };
 

@@ -1,9 +1,10 @@
 import styles from './TableStatus.module.scss';
 import { FC } from 'react';
 import { cn } from '@utils/cn-bind';
+import { OrderStatus } from '../Table/meta/types';
 
 type Props = {
-  variant: 'new' | 'active' | 'done' | 'canceled';
+  variant: OrderStatus;
 };
 
 const cx = cn(styles);

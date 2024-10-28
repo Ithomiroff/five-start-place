@@ -29,13 +29,13 @@ const FiltersBadges: FC<Props> = ({ activeKey, items, onChange }) => {
     <Tabs
       variant="pills"
       theme={theme}
+      onActiveTabChange={(num) => onChange(items[num].key)}
     >
       {items.map((item) => (
         <Tabs.Item
           key={item.key}
           active={item.key === activeKey}
           title={item.name}
-          onClick={() => onChange(item.key)}
         />
       ))}
     </Tabs>
